@@ -136,14 +136,5 @@ describe("Vault", () => {
             ).to.emit(vault, "WithdrawLp")
             .withArgs(user1Addr, lpToken.target, amount);
         });
-    
-        /* it("User1 withdraws DAI tokens for 100 lp tokens", async() => {
-            const amount = ethers.parseEther("100");
-    
-            await expect(
-                vault.connect(user1).withdrawSingle(DAIAddr, amount)
-            ).to.emit(vault, "WithdrawSingle")
-            .withArgs(user1Addr, DAIAddr, amount);
-        }); */
     });
 });

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
@@ -11,7 +11,6 @@ import './interfaces/ICVX.sol';
 import './interfaces/ICurveSwap.sol';
 import './interfaces/ISwapRouter.sol';
 import './interfaces/IWETH.sol';
-import 'hardhat/console.sol';
 
 contract Vault is Ownable {
 
@@ -228,7 +227,6 @@ contract Vault is Ownable {
             if (coin == _token) {
                 amount += balance;
             } else {
-                console.log(coin, _token, balance);
                 // swap into requested token
                 uint amountOut = _swapExactInputMultiHop(
                     coin,
